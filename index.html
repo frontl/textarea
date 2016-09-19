@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>textarea</title>
+	<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<style>
+*{
+	padding:0;
+	margin:0;
+	list-style: none;
+}
+.a_textarea{
+	border:0;
+	outline: none;
+	height:600px;
+	width:600px;
+	resize: none;
+	text-indent:2em;
+	border:1px solid #333;
+	display:block;
+	margin:0 auto;
+	padding:15px;
+	box-sizing: border-box;
+}
+.b_textarea{
+	border:0;
+	outline: none;
+	height:600px;
+	width:600px;
+	resize: none;
+	text-indent:2em;
+	border:1px solid #333;
+	display:block;
+	margin:10px auto;
+	padding:15px;
+	box-sizing: border-box;
+}
+</style>
+<body>
+	<textarea  class="a_textarea">
+	</textarea>
+		<textarea class="b_textarea">
+	</textarea>
+	<script type="text/javascript">
+
+
+var lop=(localStorage.lop)?(JSON.parse(localStorage.lop)):[];
+$('textarea').on('mousedown',function(){
+ $(this).val($(this).val())
+})
+	$('.a_textarea').on('keyup',function(e){	
+	var iop=$('.a_textarea').val();
+	lop.push(iop);
+    var tuio=lop;
+	lop=[];
+	console.log(tuio);
+	$('.b_textarea').val(tuio);
+    e = e || window.event;
+    var keycode = e.which ? e.which : e.keyCode;
+    if(keycode == 13){
+            // $(this).css('text-indent','2em')
+
+        }
+
+	})
+
+	</script>
+</body>
+</html>
